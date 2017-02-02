@@ -33,8 +33,8 @@
             var div = document.createElement('div');
             div.id = new_ball.id;
             div.className = 'cd';
-            div.textContent = "Fish!";
-            //EvenListener to register clicks on the ball
+			div.textContent = "Fish!";
+            //EventListener to register clicks on the ball
             div.addEventListener("click", function(){
                 var bg_color = div.style.backgroundColor;
                 //Nothing should happen unless you haven't already clicked the element
