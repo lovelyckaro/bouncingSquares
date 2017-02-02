@@ -27,14 +27,26 @@
 }
 
 #difficultyButtons {
-    width: 190px;
+    width: 260px;
     height: 30px;
     position: fixed;
     top: calc(50% + 60px);
-    left: calc(50% - 95px);
+    left: calc(50% - 130px);
 }
 
 .dButton {
-    width: 60px;
+    width: 58px;
     height: 30px;
+	margin-left: 2px;
+	margin-right: none;
+}
+
+#extremedif {
+	position: fixed;
+	width: 100%;
+	z-index: -100;
+}
+
+#body{
+	margin: 0,0,0,0;
 }

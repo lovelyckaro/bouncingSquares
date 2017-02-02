@@ -1,4 +1,4 @@
-var width = window.innerWidth; //window width
+    var width = window.innerWidth; //window width
     var height = window.innerHeight; //window height
         
     var difficultyLevel = 6; //difficulty default to 6 (normal)
@@ -78,7 +78,7 @@ var width = window.innerWidth; //window width
         //initialize all the shit
         function init(){
             //make all the buttons disappear
-            var buttons = document.getElementsByTagName("button")
+			var buttons = document.getElementsByTagName("button")
             for(i = 0; i < buttons.length; i++){
                 buttons[i].style.display = "none"
             }
@@ -86,6 +86,14 @@ var width = window.innerWidth; //window width
             for(i = 0; i < difficultyLevel; i++){
                 add_ball();
             }
+			//if difficulty is EXTREME add eventlistener on div in the background
+			if(difficultyLevel >= 12){
+				var extreme = document.getElementById("extremedif");
+				extreme.style.height = height + "px";
+				extreme.addEventListener("click", function(){
+					add_ball();
+				});
+			}
 
              
             var spawn_interval = 2000; //how often to spawn new balls
@@ -110,7 +118,7 @@ var width = window.innerWidth; //window width
                 }
                 
                 // If getting closer to win, make it more difficult
-                if(balls_clicked > balls.length * 0.9 && difficultyLevel == 8){
+                if(balls_clicked > balls.length * 0.9 && difficultyLevel >= 8){
                     spawn_interval = 100;
                 }else if(balls_clicked > balls.length * 0.75 && difficultyLevel >= 5) {
                     spawn_interval = 1000;
