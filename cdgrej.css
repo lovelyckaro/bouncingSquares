@@ -23,7 +23,8 @@
     left: calc(50% - 250px);
     text-align: center;
     z-index: 1000;
-    background: yellow;
+    color: white;
+    background-color: dodgerblue;
 }
 
 #difficultyButtons {
