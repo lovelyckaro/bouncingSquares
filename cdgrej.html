@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cdgrej</title>
+    <link rel="stylesheet" href="cdgrej.css"><script src="cdgrej.js"></script>
+</head>
+
+<body>
+    <div id="time_left">60 seconds</div>
+    <div id="outcome" style="display: none;"></div>
+    <button onclick="init()" id="startButton" class="button">Start the game</button>
+    <div id="difficultyButtons">
+    <button onclick="set_difficulty('3')" class="dButton" class="button">Eazy</button>
+    <button onclick="set_difficulty('5')" class="dButton" class="button">Normal</button>
+    <button onclick="set_difficulty('8')" class="dButton" class="button">Hard</button>
+    </div>
+</body>
+</html>
