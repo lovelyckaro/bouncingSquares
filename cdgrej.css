@@ -52,7 +52,5 @@ body {
 	background-size: cover;
 }
 #time_left {
-	width: 75px;
-	padding:2px;
-	background-color: white;
+	color: white;
 }
