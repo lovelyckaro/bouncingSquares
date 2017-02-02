@@ -47,6 +47,12 @@
 	z-index: -100;
 }
 
-#body{
-	margin: 0,0,0,0;
+body {
+	background-image: url(background-image.jpg);
+	background-size: cover;
+}
+#time_left {
+	width: 75px;
+	padding:2px;
+	background-color: white;
 }
