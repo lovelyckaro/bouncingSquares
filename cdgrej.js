@@ -33,13 +33,14 @@
             var div = document.createElement('div');
             div.id = new_ball.id;
             div.className = 'cd';
+            div.textContent = "Fish!";
             //EvenListener to register clicks on the ball
             div.addEventListener("click", function(){
                 var bg_color = div.style.backgroundColor;
                 //Nothing should happen unless you haven't already clicked the element
-                if (bg_color != "red") {
+                if (bg_color != "aqua") {
                     balls_clicked++;
-                    div.style.backgroundColor = "red";
+                    div.style.backgroundColor = "aqua";
                     div.style.zIndex = -1; //Change zIndex so that clicked elements can't block unclicked ones
                 }
                 
