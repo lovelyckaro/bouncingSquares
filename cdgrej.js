@@ -58,7 +58,6 @@
             //give a random velocity, depending on the difficulty
             var y_vel = Math.random() * (difficultyLevel/5 + 5) - difficultyLevel/10 - 2;
             var x_vel = Math.random() * (difficultyLevel/5 + 5) - difficultyLevel/10 - 2;
-			//Math.random()*(difficultyLevel/5 + 5) - difficultyLevel/10 - 2
             //test for illlegal cases
             if (x_pos < 0) {
                 x_pos = 0;
