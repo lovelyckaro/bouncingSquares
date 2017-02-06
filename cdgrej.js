@@ -19,11 +19,11 @@ function toggleMute(){
 }
 
 function rotate(element, angle){
-        element.style.webkitTransform = 'rotate('+angle+'deg)'; 
-        element.style.mozTransform    = 'rotate('+angle+'deg)';
-        element.style.msTransform     = 'rotate('+angle+'deg)';
-        element.style.oTransform      = 'rotate('+angle+'deg)';
-        element.style.transform       = 'rotate('+angle+'deg)';
+    element.style.webkitTransform = 'rotate('+angle+'deg)'; 
+    element.style.mozTransform    = 'rotate('+angle+'deg)';
+    element.style.msTransform     = 'rotate('+angle+'deg)';
+    element.style.oTransform      = 'rotate('+angle+'deg)';
+    element.style.transform       = 'rotate('+angle+'deg)';
 }
 
 //function to set the difficulty when you press the difficulty buttons
@@ -58,7 +58,7 @@ function add_ball() {
             balls_clicked++;
             img.src = "fishClicked.png";
             img.style.zIndex = -1; //Change zIndex so that clicked elements can't block unclicked ones
-            
+
         }
 
     });
@@ -100,7 +100,7 @@ function set_random_position(cd, cd_obj) {
 //initialize all the shit
 function init(){
     //make all the buttons disappear
-    var buttons = document.getElementsByTagName("button")
+    var buttons = document.getElementsByClassName('btn')
     for(i = 0; i < buttons.length; i++){
         buttons[i].style.display = "none"
     }
