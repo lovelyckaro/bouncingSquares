@@ -10,6 +10,14 @@ var balls_clicked = 0; //counter of how many balls you've clicked
 var seconds_left = 60000; //timer
 var timer = 0; //also timer
 
+var muteState = false;
+
+function toggleMute(){
+    muteState = !muteState;
+    var audio = document.getElementById("bgMusic");
+    audio.muted = muteState;
+}
+
 function rotate(element, angle){
         element.style.webkitTransform = 'rotate('+angle+'deg)'; 
         element.style.mozTransform    = 'rotate('+angle+'deg)';
