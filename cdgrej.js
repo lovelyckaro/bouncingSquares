@@ -29,7 +29,7 @@
             balls.push(new_ball);
             
             id_count++;
-            //make new div with the id from it's corresponding object, and the class "id"
+            //make new img with the id from it's corresponding object, and the class "id"
             var img = document.createElement('img');
             img.id = new_ball.id;
             img.className = 'cd';
