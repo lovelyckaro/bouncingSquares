@@ -30,25 +30,25 @@
             
             id_count++;
             //make new div with the id from it's corresponding object, and the class "id"
-            var div = document.createElement('div');
-            div.id = new_ball.id;
-            div.className = 'cd';
-			div.textContent = "Fish!";
+            var img = document.createElement('img');
+            img.id = new_ball.id;
+            img.className = 'cd';
+            img.src = "fish.png";
             //EventListener to register clicks on the ball
-            div.addEventListener("click", function(){
-                var bg_color = div.style.backgroundColor;
+            img.addEventListener("click", function(){
+                var src = img.src;
                 //Nothing should happen unless you haven't already clicked the element
-                if (bg_color != "aqua") {
+                if (src != "fishClicked.png") {
                     balls_clicked++;
-                    div.style.backgroundColor = "aqua";
-                    div.style.zIndex = -1; //Change zIndex so that clicked elements can't block unclicked ones
+                    img.src = "fishClicked.png";
+                    img.style.zIndex = -1; //Change zIndex so that clicked elements can't block unclicked ones
                 }
                 
             });
             //add the new div to the body
-            document.body.appendChild(div);
+            document.body.appendChild(img);
             //give the element a position
-            set_random_position(div, new_ball);
+            set_random_position(img, new_ball);
         }
         //give a random position and velocity to an object/element
         function set_random_position(cd, cd_obj) {
