@@ -66,15 +66,24 @@
             if (y_pos < 0) {
                 y_pos = 0;
             }
+			
+			//Get objects angle from it's velocity
+			var angle = (Math.atan2(y_vel, x_vel) * 180/Math.PI);
             
             //apply new position and velocity to object
             cd_obj.x = x_pos;
             cd_obj.y = y_pos;
             cd_obj.xv = x_vel;
             cd_obj.yv = y_vel;
-            //apply new position to the element
+            //apply new position and angle to the element
             cd.style.left = cd_obj.x + "px";
             cd.style.top = cd_obj.y + "px";
+            //These are all for rotating the element in different browsers
+            cd.style.webkitTransform = 'rotate('+angle+'deg)'; 
+            cd.style.mozTransform    = 'rotate('+angle+'deg)';
+            cd.style.msTransform     = 'rotate('+angle+'deg)';
+            cd.style.oTransform      = 'rotate('+angle+'deg)';
+            cd.style.transform       = 'rotate('+angle+'deg)';
         }
         //initialize all the shit
         function init(){
@@ -142,9 +151,23 @@
             //test if ball hits any of the walls
             if(cd_obj.x < 0 || cd_obj.x >= (width - 100)){
                 cd_obj.xv = 0 - cd_obj.xv; //invert velocity
+                var angle = (Math.atan2(cd_obj.yv, cd_obj.xv) * 180/Math.PI); //calculate new angle
+                //apply new angle to element
+                cd.style.webkitTransform = 'rotate('+angle+'deg)'; 
+                cd.style.mozTransform    = 'rotate('+angle+'deg)';
+                cd.style.msTransform     = 'rotate('+angle+'deg)';
+                cd.style.oTransform      = 'rotate('+angle+'deg)';
+                cd.style.transform       = 'rotate('+angle+'deg)';
             }
             if(cd_obj.y < 0 || cd_obj.y >= (height - 100)){
-                cd_obj.yv = 0 - cd_obj.yv; //invert velocity 
+                cd_obj.yv = 0 - cd_obj.yv; //invert velocity
+                var angle = (Math.atan2(cd_obj.yv, cd_obj.xv) * 180/Math.PI); //calculate new angle
+                //apply new angle to element
+                cd.style.webkitTransform = 'rotate('+angle+'deg)'; 
+                cd.style.mozTransform    = 'rotate('+angle+'deg)';
+                cd.style.msTransform     = 'rotate('+angle+'deg)';
+                cd.style.oTransform      = 'rotate('+angle+'deg)';
+                cd.style.transform       = 'rotate('+angle+'deg)';
             }
             //add velocity to position of the object
             cd_obj.x += cd_obj.xv;
