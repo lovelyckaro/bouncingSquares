@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="sv">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cdgrej</title>
-    <link rel="stylesheet" href="cdgrej.css"><script src="cdgrej.js"></script>
-</head>
-<body>
-	<div id="extremedif"></div>
-    <div id="time_left">60 seconds</div>
-    <div id="outcome" style="display: none;"></div>
-    <button onclick="init()" id="startButton" class="button">Start the game</button>
-    <div id="difficultyButtons">
-    <button onclick="set_difficulty('3')" class="dButton" class="button" title="Begin with 3 slow squares">Eazy</button>
-    <button onclick="set_difficulty('5')" class="dButton" class="button" title="Begin with 5 squares, when approaching the goal it get's harder">Normal</button>
-    <button onclick="set_difficulty('8')" class="dButton" class="button" title="Begin with 8 squares, when approaching the goal it becomes impossible!">Hard</button>
-    <button onclick="set_difficulty('12')" class="dButton" class="button" title="Begin with 12 squares, if you miss you spawn a new box">Extreme</button>
-    <audio autoplay>
-        <source src="Carefree.mp3" type="audio/mpeg">
-    </audio>
-    </div>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cdgrej</title>
+        <link rel="stylesheet" href="cdgrej.css"><script src="cdgrej.js"></script>
+    </head>
+    <body>
+        <div id="extremedif"></div>
+        <div id="time_left">60 seconds</div>
+        <div id="outcome" style="display: none;"></div>
+        <button onclick="init()" id="startButton" class="button">Start the game</button>
+        <div id="difficultyButtons">
+            <button onclick="set_difficulty('3')" class="dButton" class="button" title="Begin with 3 slow squares">Eazy</button>
+            <button onclick="set_difficulty('5')" class="dButton" class="button" title="Begin with 5 squares, when approaching the goal it get's harder">Normal</button>
+            <button onclick="set_difficulty('8')" class="dButton" class="button" title="Begin with 8 squares, when approaching the goal it becomes impossible!">Hard</button>
+            <button onclick="set_difficulty('12')" class="dButton" class="button" title="Begin with 12 squares, if you miss you spawn a new box">Extreme</button>
+            <button onclick="document.audio.muted=true; return false" id="muteBtn">Mute sound</button>
+            <audio autoplay>
+                <source src="Carefree.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </body>
 </html>

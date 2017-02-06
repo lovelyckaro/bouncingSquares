@@ -37,20 +37,20 @@
 .dButton {
     width: 58px;
     height: 30px;
-	margin-left: 2px;
-	margin-right: none;
+    margin-left: 2px;
+    margin-right: none;
 }
 
 #extremedif {
-	position: fixed;
-	width: 100%;
-	z-index: -100;
+    position: fixed;
+    width: 100%;
+    z-index: -100;
 }
 
 body {
-	background-image: url(background-image.jpg);
-	background-size: cover;
+    background-image: url(background-image.jpg);
+    background-size: cover;
 }
 #time_left {
-	color: white;
+    color: white;
 }
