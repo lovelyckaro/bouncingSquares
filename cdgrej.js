@@ -24,7 +24,6 @@
                 y: 0,
                 xv: 1,
                 yv: 1,
-				angle: 0,
             };
             
             balls.push(new_ball);
@@ -69,17 +68,23 @@
             }
 			
 			//Get objects angle from it's velocity
-			var angle = Math.atan2(y_vel, x_vel);
+			var angle = (Math.atan2(y_vel, x_vel) * 180/Math.PI);
+            alert(angle);
             
-            //apply new position, velocity, and angle to object
+            //apply new position and velocity to object
             cd_obj.x = x_pos;
             cd_obj.y = y_pos;
             cd_obj.xv = x_vel;
             cd_obj.yv = y_vel;
-			cd_obj.angle = angle;
             //apply new position and angle to the element
             cd.style.left = cd_obj.x + "px";
             cd.style.top = cd_obj.y + "px";
+            //These are all for rotating the element in different browsers
+            cd.style.webkitTransform = 'rotate('+angle+'deg)'; 
+            cd.style.mozTransform    = 'rotate('+angle+'deg)';
+            cd.style.msTransform     = 'rotate('+angle+'deg)';
+            cd.style.oTransform      = 'rotate('+angle+'deg)';
+            cd.style.transform       = 'rotate('+angle+'deg)';
         }
         //initialize all the shit
         function init(){
