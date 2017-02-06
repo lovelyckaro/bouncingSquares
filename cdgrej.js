@@ -10,6 +10,14 @@ var balls_clicked = 0; //counter of how many balls you've clicked
 var seconds_left = 60000; //timer
 var timer = 0; //also timer
 
+function rotate(element, angle){
+        element.style.webkitTransform = 'rotate('+angle+'deg)'; 
+        element.style.mozTransform    = 'rotate('+angle+'deg)';
+        element.style.msTransform     = 'rotate('+angle+'deg)';
+        element.style.oTransform      = 'rotate('+angle+'deg)';
+        element.style.transform       = 'rotate('+angle+'deg)';
+}
+
 //function to set the difficulty when you press the difficulty buttons
 function set_difficulty(d){
     difficultyLevel = d;
@@ -42,6 +50,7 @@ function add_ball() {
             balls_clicked++;
             img.src = "fishClicked.png";
             img.style.zIndex = -1; //Change zIndex so that clicked elements can't block unclicked ones
+            
         }
 
     });
@@ -78,12 +87,7 @@ function set_random_position(cd, cd_obj) {
     //apply new position and angle to the element
     cd.style.left = cd_obj.x + "px";
     cd.style.top = cd_obj.y + "px";
-    //These are all for rotating the element in different browsers
-    cd.style.webkitTransform = 'rotate('+angle+'deg)'; 
-    cd.style.mozTransform    = 'rotate('+angle+'deg)';
-    cd.style.msTransform     = 'rotate('+angle+'deg)';
-    cd.style.oTransform      = 'rotate('+angle+'deg)';
-    cd.style.transform       = 'rotate('+angle+'deg)';
+    rotate(cd,angle);
 }
 //initialize all the shit
 function init(){
@@ -152,22 +156,12 @@ function move_ball(cd, cd_obj){
     if(cd_obj.x < 0 || cd_obj.x >= (width - 100)){
         cd_obj.xv = 0 - cd_obj.xv; //invert velocity
         var angle = (Math.atan2(cd_obj.yv, cd_obj.xv) * 180/Math.PI); //calculate new angle
-        //apply new angle to element
-        cd.style.webkitTransform = 'rotate('+angle+'deg)'; 
-        cd.style.mozTransform    = 'rotate('+angle+'deg)';
-        cd.style.msTransform     = 'rotate('+angle+'deg)';
-        cd.style.oTransform      = 'rotate('+angle+'deg)';
-        cd.style.transform       = 'rotate('+angle+'deg)';
+        rotate(cd, angle);
     }
     if(cd_obj.y < 0 || cd_obj.y >= (height - 100)){
         cd_obj.yv = 0 - cd_obj.yv; //invert velocity
         var angle = (Math.atan2(cd_obj.yv, cd_obj.xv) * 180/Math.PI); //calculate new angle
-        //apply new angle to element
-        cd.style.webkitTransform = 'rotate('+angle+'deg)'; 
-        cd.style.mozTransform    = 'rotate('+angle+'deg)';
-        cd.style.msTransform     = 'rotate('+angle+'deg)';
-        cd.style.oTransform      = 'rotate('+angle+'deg)';
-        cd.style.transform       = 'rotate('+angle+'deg)';
+        rotate(cd, angle)
     }
     //add velocity to position of the object
     cd_obj.x += cd_obj.xv;
